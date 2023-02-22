@@ -14,7 +14,7 @@ const Template: ComponentStory<typeof SortButton> = (args) => (
 
 export const Default = Template.bind({});
 
-export const SortNumber = Template.bind({});
-SortNumber.args = {
-  sortNumber: true,
+export const SortName = Template.bind({});
+SortName.args = {
+  sortName: true,
 };
