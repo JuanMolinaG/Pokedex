@@ -1,0 +1,45 @@
+@use 'variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.5rem;
+  color: variables.$gs-white;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2rem;
+  color: variables.$gs-white;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: variables.$gs-white;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1.25rem;
+  color: variables.$gs-white;
+  font-weight: bold;
+}
+
+.shadowSmall {
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+.shadowBig {
+  box-shadow: 0 3px 12px 3px rgba(0, 0, 0, 0.2);
+}
+
+.innerShadow {
+  box-shadow: inset 0 1px 3px 1px rgba(0, 0, 0, 0.25);
+}
