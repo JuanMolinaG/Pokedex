@@ -1,0 +1,37 @@
+@use '../../styles/variables';
+
+.searchBar__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  background-color: variables.$gs-white;
+  padding: 8px 16px 8px 12px;
+  border-radius: 16px;
+}
+
+.searchBar__icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url('../../public/images/search_icon.svg') no-repeat center / 16px
+    16px;
+}
+
+.searchBar__input {
+  width: 100%;
+  margin-left: 8px;
+  border: none;
+  outline: none;
+  color: variables.$gs-dark;
+}
+
+.searchBar__clear {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url('../../public/images/clear_icon.svg') no-repeat center / 16px
+    16px;
+  margin-left: 8px;
+  cursor: pointer;
+}
