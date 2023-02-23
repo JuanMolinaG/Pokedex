@@ -1,0 +1,39 @@
+@use '../../styles/variables';
+
+.sortModal__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 120px;
+  border-radius: 12px;
+  background-color: variables.$primary-color;
+  padding: 0 4px 4px 4px;
+}
+
+.sortModal__header {
+  padding: 16px 20px;
+}
+
+.sortModal__title {
+  margin: 0;
+}
+
+.sortModal__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 80px;
+  padding: 16px 20px;
+  background-color: variables.$gs-white;
+  border-radius: 8px;
+  font-size: 0.75rem;
+}
+
+.sortModal__option {
+  display: flex;
+  align-items: center;
+
+  input {
+    margin: 0 8px 0 0;
+  }
+}
