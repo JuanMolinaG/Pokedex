@@ -41,11 +41,9 @@ const Template: ComponentStory<typeof Badge> = (args) => <Badge {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   type: 'default',
-  children: 'Default',
 };
 
 export const ByType = Template.bind({});
 ByType.args = {
   type: 'normal',
-  children: 'Type',
 };

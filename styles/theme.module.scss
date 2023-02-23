@@ -9,25 +9,25 @@
 
 /* Headings */
 h1 {
-  font-size: 2.5rem;
-  color: variables.$gs-white;
-  font-weight: bold;
-}
-
-h2 {
   font-size: 2rem;
   color: variables.$gs-white;
   font-weight: bold;
 }
 
-h3 {
+h2 {
   font-size: 1.5rem;
   color: variables.$gs-white;
   font-weight: bold;
 }
 
+h3 {
+  font-size: 1rem;
+  color: variables.$gs-white;
+  font-weight: bold;
+}
+
 h4 {
-  font-size: 1.25rem;
+  font-size: 0.8rem;
   color: variables.$gs-white;
   font-weight: bold;
 }
