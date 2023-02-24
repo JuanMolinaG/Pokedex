@@ -1,0 +1,73 @@
+@use 'variables';
+
+.type__normal {
+  background-color: variables.$type-normal !important;
+}
+
+.type__fighting {
+  background-color: variables.$type-fighting !important;
+}
+
+.type__flying {
+  background-color: variables.$type-flying !important;
+}
+
+.type__ground {
+  background-color: variables.$type-ground !important;
+}
+
+.type__poison {
+  background-color: variables.$type-poison !important;
+}
+
+.type__rock {
+  background-color: variables.$type-rock !important;
+}
+
+.type__bug {
+  background-color: variables.$type-bug !important;
+}
+
+.type__ghost {
+  background-color: variables.$type-ghost !important;
+}
+
+.type__steel {
+  background-color: variables.$type-steel !important;
+}
+
+.type__fire {
+  background-color: variables.$type-fire !important;
+}
+
+.type__water {
+  background-color: variables.$type-water !important;
+}
+
+.type__grass {
+  background-color: variables.$type-grass !important;
+}
+
+.type__electric {
+  background-color: variables.$type-electric !important;
+}
+
+.type__psychic {
+  background-color: variables.$type-psychic !important;
+}
+
+.type__ice {
+  background-color: variables.$type-ice !important;
+}
+
+.type__dragon {
+  background-color: variables.$type-dragon !important;
+}
+
+.type__dark {
+  background-color: variables.$type-dark !important;
+}
+
+.type__fairy {
+  background-color: variables.$type-fairy !important;
+}
