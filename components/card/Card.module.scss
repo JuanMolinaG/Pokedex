@@ -1,0 +1,151 @@
+@use '../../styles/variables';
+
+.card {
+  position: relative;
+  width: 12.5rem;
+}
+
+.pokemon__number {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  z-index: 1000;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.65);
+  padding: 0.5rem 0.5rem 0.75rem;
+  color: variables.$gs-white;
+  clip-path: polygon(100% 0, 100% 100%, 50% 85%, 0 100%, 0 0);
+  transition: transform 200ms cubic-bezier(0.2, 1, 0.8, 1);
+}
+
+.card__cover {
+  transition: 250ms;
+  background: variables.$gs-white;
+  border-radius: 0.5rem;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+
+  .pokemon__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+
+  .pokemon__name {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 5.5rem;
+    padding-bottom: 0.75rem;
+    margin-top: -3.5rem;
+    margin-bottom: 0;
+    background: variables.$gs-ligther;
+    color: variables.$gs-medium;
+    border-radius: 1rem 1rem 0 0;
+  }
+}
+
+.card__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+
+  .pokemon__types {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  a {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    text-decoration: none;
+    color: variables.$gs-white;
+    background-color: variables.$primary-color;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .stats {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-top: 0.5rem;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat__value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: variables.$gs-medium;
+    width: 2.2rem;
+    height: 2.2rem;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+
+  .stat__name {
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 900;
+  }
+}
+
+.card__background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: variables.$gs-dark;
+  z-index: -1;
+  transform: scale(0.2, 0.9);
+  opacity: 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 30%;
+    object-fit: cover;
+    opacity: 0.3;
+    clip-path: url(#wave);
+  }
+}
+
+.card:hover {
+  .pokemon__number {
+    transform: translate(100%, -67%);
+  }
+
+  .card__cover {
+    transform: translateY(-38%) scale(0.8);
+  }
+
+  .card__content {
+    opacity: 1;
+    transition: opacity 150ms linear;
+  }
+
+  .card__background {
+    transition: transform 200ms cubic-bezier(0.2, 1, 0.8, 1),
+      opacity 100ms linear;
+    opacity: 1;
+    transform: scale(1.4, 1.25);
+  }
+}
