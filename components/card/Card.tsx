@@ -46,7 +46,7 @@ export function Card({
               <Badge key={type} type={type} />
             ))}
           </div>
-          <Link href={`/pokemon/${id}`}>More Details</Link>
+          <Link href={`/pokemon/${name}`}>More Details</Link>
           <div className={style.stats}>
             <div className={style.stat}>
               <span
