@@ -1,0 +1,36 @@
+@use '../styles/variables';
+
+.home__container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.5rem 0.5rem;
+  background-color: variables.$primary-color;
+  height: 100svh;
+}
+
+.home__header {
+  display: flex;
+  align-items: center;
+  flex: 0 1 auto;
+  margin: 0 1rem;
+  column-gap: 1rem;
+
+  svg {
+    fill: variables.$gs-white;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+  }
+
+  .home__title {
+    color: variables.$gs-white;
+  }
+}
+
+.home__search {
+  display: flex;
+  align-items: center;
+  flex: 0 1 auto;
+  column-gap: 1rem;
+  margin: 0.5rem 1rem 2rem 1rem;
+}
