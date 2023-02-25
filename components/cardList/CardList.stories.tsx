@@ -6,20 +6,6 @@ import { CardList } from './CardList';
 export default {
   component: CardList,
   title: 'CardList',
-  decorators: [
-    (Story) => (
-      <div
-        style={{
-          width: '100%',
-          height: '100vh',
-          backgroundColor: '#dc0a2d',
-          padding: '1rem',
-        }}
-      >
-        <Story />
-      </div>
-    ),
-  ],
 } as ComponentMeta<typeof CardList>;
 
 const Template: ComponentStory<typeof CardList> = (args) => (
@@ -41,6 +27,7 @@ Default.args = {
       },
     },
   ],
+  loading: false,
 };
 
 export const MultiplePokemon = Template.bind({});
@@ -83,4 +70,17 @@ MultiplePokemon.args = {
       },
     },
   ],
+  loading: false,
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  pokemonList: [],
+  loading: true,
+};
+
+export const Empty = Template.bind({});
+Empty.args = {
+  pokemonList: [],
+  loading: false,
 };
