@@ -1,11 +1,13 @@
-import '../styles/theme.module.scss'
+import '../styles/globals.scss';
+import '../styles/theme.module.scss';
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/,
     },
   },
-}
+  layout: 'fullscreen',
+};
