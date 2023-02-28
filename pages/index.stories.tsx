@@ -5,7 +5,7 @@ import Home from './index';
 
 export default {
   component: Home,
-  title: 'Home',
+  title: 'Pages/Home',
 } as ComponentMeta<typeof Home>;
 
 const pokemonList = [

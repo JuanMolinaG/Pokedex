@@ -8,6 +8,15 @@ export default {
   title: 'SearchBar',
 } as ComponentMeta<typeof SearchBar>;
 
-const Template: ComponentStory<typeof SearchBar> = (args) => <SearchBar />;
+function setSearch(search: string): void {
+  console.log('setSearch');
+}
+
+const Template: ComponentStory<typeof SearchBar> = (args) => (
+  <SearchBar {...args} />
+);
 
 export const Default = Template.bind({});
+Default.args = {
+  setSearch,
+};

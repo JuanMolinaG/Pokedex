@@ -1,9 +1,9 @@
+import React, { useState } from 'react';
 import Head from 'next/head';
 
 import { SearchBar } from '../components/searchBar/SearchBar';
 import { SortButton } from '../components/sortButton/SortButton';
 
-import { useState } from 'react';
 import style from './index.module.scss';
 import Pokeball from '../public/images/pokeball.svg';
 import { CardList } from '../components/cardList/CardList';
@@ -25,7 +25,13 @@ export default function Home({
 }: {
   pokemonList: PokemonBasicData[];
 }) {
-  const [loading, setLoading] = useState(false);
+  const [search, setSearch] = useState('');
+
+  if (search) {
+    pokemonList = pokemonList.filter((pokemon) =>
+      pokemon.name.includes(search.toLowerCase())
+    );
+  }
 
   return (
     <>
@@ -41,10 +47,10 @@ export default function Home({
           <h1 className={style.home__title}>Pokedex</h1>
         </div>
         <div className={style.home__search}>
-          <SearchBar />
+          <SearchBar setSearch={setSearch} />
           <SortButton sortName={false} />
         </div>
-        <CardList pokemonList={pokemonList} loading={loading} />
+        <CardList pokemonList={pokemonList} loading={false} />
       </main>
     </>
   );

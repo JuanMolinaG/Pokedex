@@ -1,11 +1,16 @@
-import { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import theme from '../../styles/theme.module.scss';
 import style from './SearchBar.module.scss';
 
-export function SearchBar() {
-  const [search, setSearch] = useState('');
+export function SearchBar({
+  setSearch,
+}: {
+  setSearch: (search: string) => void;
+}) {
+  const [isSearching, setIsSearching] = useState(false);
   const [focus, setFocus] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleFocus = () => {
     setFocus(true);
@@ -17,9 +22,12 @@ export function SearchBar() {
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
+    setIsSearching(e.target.value.length > 0);
   };
 
   const handleClear = () => {
+    setIsSearching(false);
+    inputRef.current!.value = '';
     setSearch('');
   };
 
@@ -37,9 +45,9 @@ export function SearchBar() {
         onFocus={handleFocus}
         onBlur={handleBlur}
         onChange={handleInput}
-        value={search}
+        ref={inputRef}
       />
-      {search.length > 0 && (
+      {isSearching && (
         <span className={style.searchBar__clear} onClick={handleClear}></span>
       )}
     </div>
