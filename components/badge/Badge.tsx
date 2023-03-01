@@ -1,3 +1,4 @@
+import React from 'react';
 import { PokemonType } from '@/types';
 
 import style from './Badge.module.scss';
