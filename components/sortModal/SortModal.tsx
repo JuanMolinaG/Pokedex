@@ -1,21 +1,28 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useOutsideClick } from '../../hooks/useOutsideClick';
 
 import theme from '../../styles/theme.module.scss';
 import style from './SortModal.module.scss';
 
 export function SortModal({
-  showModal,
   sortName,
   setSortName,
+  setShowModal,
 }: {
-  showModal: boolean;
   sortName: boolean;
   setSortName: (sortName: boolean) => void;
+  setShowModal: (showModal: boolean) => void;
 }) {
   const handleSort = () => {
     setSortName(!sortName);
   };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const ref = useOutsideClick(handleCloseModal);
 
   const defaultAnimationState = {
     opacity: 0,
@@ -25,6 +32,7 @@ export function SortModal({
   return (
     <motion.div
       className={style.sortModal__container}
+      ref={ref}
       key="modal"
       initial={defaultAnimationState}
       exit={defaultAnimationState}

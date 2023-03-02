@@ -83,7 +83,7 @@ export default function Home({
             <SortModal
               sortName={sortName}
               setSortName={setSortName}
-              showModal={showModal}
+              setShowModal={setShowModal}
             />
           )}
         </AnimatePresence>
