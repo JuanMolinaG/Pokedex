@@ -1,16 +1,43 @@
-import { useState } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
+
 import theme from '../../styles/theme.module.scss';
 import style from './SortModal.module.scss';
 
-export function SortModal({ sortName }: { sortName: boolean }) {
-  const [sort, setSort] = useState(sortName);
-
+export function SortModal({
+  showModal,
+  sortName,
+  setSortName,
+}: {
+  showModal: boolean;
+  sortName: boolean;
+  setSortName: (sortName: boolean) => void;
+}) {
   const handleSort = () => {
-    setSort(!sort);
+    setSortName(!sortName);
+  };
+
+  const defaultAnimationState = {
+    opacity: 0,
+    scale: 0,
   };
 
   return (
-    <div className={style.sortModal__container}>
+    <motion.div
+      className={style.sortModal__container}
+      key="modal"
+      initial={defaultAnimationState}
+      exit={defaultAnimationState}
+      animate={{
+        opacity: 1,
+        scale: 1,
+        transformOrigin: 'right top',
+      }}
+      transition={{
+        ease: 'easeInOut',
+        duration: 0.25,
+      }}
+    >
       <div className={style.sortModal__header}>
         <h3 className={style.sortModal__title}>Sort by:</h3>
       </div>
@@ -20,7 +47,7 @@ export function SortModal({ sortName }: { sortName: boolean }) {
             type="radio"
             name="sortBy"
             id="number"
-            defaultChecked={!sort}
+            defaultChecked={!sortName}
             onChange={handleSort}
           />
           <label htmlFor="number">Number</label>
@@ -30,12 +57,12 @@ export function SortModal({ sortName }: { sortName: boolean }) {
             type="radio"
             name="sortBy"
             id="Name"
-            defaultChecked={sort}
+            defaultChecked={sortName}
             onChange={handleSort}
           />
           <label htmlFor="Name">Name</label>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+import { AnimatePresence } from 'framer-motion';
+import { useIsMount } from '../hooks/useIsMount';
 
 import { SearchBar } from '../components/searchBar/SearchBar';
 import { SortButton } from '../components/sortButton/SortButton';
+import { CardList } from '../components/cardList/CardList';
+import { SortModal } from '../components/sortModal/SortModal';
+
+import { getPokemonsWithBasicData } from '../utils/getPokemon';
 
 import style from './index.module.scss';
 import Pokeball from '../public/images/pokeball.svg';
-import { CardList } from '../components/cardList/CardList';
 import { PokemonBasicData } from '../types';
-import { getPokemonsWithBasicData } from '../utils/getPokemon';
 
 export async function getStaticProps() {
   const pokemons = await getPokemonsWithBasicData();
@@ -26,10 +30,15 @@ export default function Home({
   pokemonList: PokemonBasicData[];
 }) {
   const [search, setSearch] = useState('');
+  const [showModal, setShowModal] = useState(false);
+  const [sortName, setSortName] = useState(false);
+  const isMount = useIsMount();
 
   if (search) {
-    pokemonList = pokemonList.filter((pokemon) =>
-      pokemon.name.includes(search.toLowerCase())
+    pokemonList = pokemonList.filter(
+      (pokemon) =>
+        pokemon.name.includes(search.toLowerCase()) ||
+        pokemon.id == Number(search)
     );
   }
 
@@ -48,9 +57,22 @@ export default function Home({
         </div>
         <div className={style.home__search}>
           <SearchBar setSearch={setSearch} />
-          <SortButton sortName={false} />
+          <SortButton
+            sortName={sortName}
+            showModal={showModal}
+            setShowModal={setShowModal}
+          />
         </div>
-        <CardList pokemonList={pokemonList} loading={false} />
+        <CardList pokemonList={pokemonList} loading={false} isMount={isMount} />
+        <AnimatePresence>
+          {showModal && (
+            <SortModal
+              sortName={sortName}
+              setSortName={setSortName}
+              showModal={showModal}
+            />
+          )}
+        </AnimatePresence>
       </main>
     </>
   );
