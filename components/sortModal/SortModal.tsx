@@ -39,12 +39,12 @@ export function SortModal({
       animate={{
         opacity: 1,
         scale: 1,
-        transformOrigin: 'right top',
       }}
       transition={{
         ease: 'easeInOut',
         duration: 0.25,
       }}
+      style={{ transformOrigin: 'right top' }}
     >
       <div className={style.sortModal__header}>
         <h3 className={style.sortModal__title}>Sort by:</h3>
