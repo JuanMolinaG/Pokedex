@@ -1,10 +1,13 @@
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Badge } from '../badge/Badge';
+import { motion } from 'framer-motion';
+
 import { PokemonType } from '@/types';
 import { formatNum } from '../../utils/formatNum';
-import noImage from '../../public/images/no_image.png';
 
+import noImage from '../../public/images/no_image.png';
 import style from './Card.module.scss';
 import typeColors from '../../styles/typeColors.module.scss';
 
@@ -20,14 +23,43 @@ interface CardProps {
       defense: number;
     };
   };
+  index: number;
+  isMount: boolean;
 }
 
 export function Card({
   pokemon: { id, name, types, image, stats },
+  index,
+  isMount,
 }: CardProps) {
+  const delay = isMount ? index * 0.1 : 0;
+
   return (
     <>
-      <div className={style.card}>
+      <motion.div
+        className={style.card}
+        initial={{
+          opacity: 0,
+          y: 30,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        exit={{
+          opacity: 0,
+          y: 30,
+          transition: {
+            duration: 0.1,
+            delay: 0,
+          },
+        }}
+        transition={{
+          type: 'spring',
+          duration: 0.5,
+          delay: delay,
+        }}
+      >
         <div className={style.pokemon__number}>{formatNum(id)}</div>
         <div className={style.card__cover}>
           <Image
@@ -111,7 +143,7 @@ export function Card({
             </clipPath>
           </defs>
         </svg>
-      </div>
+      </motion.div>
     </>
   );
 }

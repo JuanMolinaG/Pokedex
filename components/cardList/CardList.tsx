@@ -1,6 +1,8 @@
+import React from 'react';
 import Image from 'next/image';
 import { PokemonBasicData } from '@/types';
 import { Card } from '../card/Card';
+import { AnimatePresence } from 'framer-motion';
 
 import style from './CardList.module.scss';
 import ErrorIcon from '../../public/images/clear_icon.svg';
@@ -9,9 +11,10 @@ import noImage from '../../public/images/no_image.png';
 interface CardListProps {
   pokemonList: PokemonBasicData[] | [];
   loading: boolean;
+  isMount: boolean;
 }
 
-export function CardList({ pokemonList, loading }: CardListProps) {
+export function CardList({ pokemonList, loading, isMount }: CardListProps) {
   const DummyCard = (
     <div className={style.dummyCard}>
       <Image
@@ -50,9 +53,16 @@ export function CardList({ pokemonList, loading }: CardListProps) {
     <div
       className={`${style.cardList} ${pokemonList.length > 0 && style.noEmpty}`}
     >
-      {pokemonList.map((pokemon) => (
-        <Card key={pokemon.id} pokemon={pokemon} />
-      ))}
+      <AnimatePresence>
+        {pokemonList.map((pokemon, index) => (
+          <Card
+            key={pokemon.id}
+            pokemon={pokemon}
+            index={index}
+            isMount={isMount}
+          />
+        ))}
+      </AnimatePresence>
     </div>
   );
 }
