@@ -42,6 +42,20 @@ export default function Home({
     );
   }
 
+  if (sortName) {
+    pokemonList.sort((a, b) => {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    });
+  } else {
+    pokemonList.sort((a, b) => a.id - b.id);
+  }
+
   return (
     <>
       <Head>
