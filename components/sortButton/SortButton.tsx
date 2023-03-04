@@ -4,21 +4,22 @@ import styles from './SortButton.module.scss';
 export function SortButton({
   sortName,
   showModal,
-  setShowModal,
+  handleShowModal,
 }: {
   sortName: boolean;
   showModal: boolean;
-  setShowModal: (showModal: boolean) => void;
+  handleShowModal: (show: boolean) => void;
 }) {
   const handleClick = () => {
-    setShowModal(!showModal);
+    handleShowModal(!showModal);
   };
 
   return (
     <button
       className={`${styles.sortButton} ${
         sortName ? styles.sortName : styles.sortNumber
-      }`}
+      } ${showModal}`}
+      id="sortButton"
       onClick={handleClick}
     ></button>
   );

@@ -1,11 +1,18 @@
 import { useEffect, useRef } from 'react';
 
-export const useOutsideClick = (callback: Function) => {
-  const ref = useRef<HTMLDivElement>();
+export const useOutsideClick = (
+  callback: Function,
+  excludeElementById?: string
+) => {
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleClick = (event) => {
-      if (ref.current && !ref.current.contains(event.target)) {
+    const handleClick = (event: MouseEvent) => {
+      if (
+        event.target instanceof HTMLElement &&
+        !ref.current?.contains(event.target) &&
+        event.target.id !== excludeElementById
+      ) {
         callback();
       }
     };

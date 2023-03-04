@@ -34,6 +34,10 @@ export default function Home({
   const [sortName, setSortName] = useState(false);
   const isMount = useIsMount();
 
+  const handleShowModal = (show: boolean) => {
+    setShowModal(show);
+  };
+
   if (search) {
     pokemonList = pokemonList.filter(
       (pokemon) =>
@@ -74,7 +78,7 @@ export default function Home({
           <SortButton
             sortName={sortName}
             showModal={showModal}
-            setShowModal={setShowModal}
+            handleShowModal={handleShowModal}
           />
         </div>
         <CardList pokemonList={pokemonList} loading={false} isMount={isMount} />
@@ -83,7 +87,7 @@ export default function Home({
             <SortModal
               sortName={sortName}
               setSortName={setSortName}
-              setShowModal={setShowModal}
+              handleShowModal={handleShowModal}
             />
           )}
         </AnimatePresence>

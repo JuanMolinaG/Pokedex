@@ -8,21 +8,21 @@ import style from './SortModal.module.scss';
 export function SortModal({
   sortName,
   setSortName,
-  setShowModal,
+  handleShowModal,
 }: {
   sortName: boolean;
   setSortName: (sortName: boolean) => void;
-  setShowModal: (showModal: boolean) => void;
+  handleShowModal: (show: boolean) => void;
 }) {
   const handleSort = () => {
     setSortName(!sortName);
   };
 
   const handleCloseModal = () => {
-    setShowModal(false);
+    handleShowModal(false);
   };
 
-  const ref = useOutsideClick(handleCloseModal);
+  const ref = useOutsideClick(handleCloseModal, 'sortButton');
 
   const defaultAnimationState = {
     opacity: 0,
