@@ -83,7 +83,7 @@ export function Card({
             <div className={style.stat}>
               <span
                 className={`${style.stat__value} ${
-                  typeColors['type__' + types[0]]
+                  typeColors[types[0] + '__bg']
                 }`}
               >
                 {formatNum(stats.hp)}
@@ -93,7 +93,7 @@ export function Card({
             <div className={style.stat}>
               <span
                 className={`${style.stat__value} ${
-                  typeColors['type__' + types[0]]
+                  typeColors[types[0] + '__bg']
                 }`}
               >
                 {formatNum(stats.attack)}
@@ -103,7 +103,7 @@ export function Card({
             <div className={style.stat}>
               <span
                 className={`${style.stat__value} ${
-                  typeColors['type__' + types[0]]
+                  typeColors[types[0] + '__bg']
                 }`}
               >
                 {formatNum(stats.defense)}

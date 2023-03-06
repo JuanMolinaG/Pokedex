@@ -1,73 +1,163 @@
 @use 'variables';
 
-.type__normal {
+// normal
+.normal__bg {
   background-color: variables.$type-normal !important;
 }
 
-.type__fighting {
+.normal__color {
+  color: variables.$type-normal;
+}
+
+// fighting
+.fighting__bg {
   background-color: variables.$type-fighting !important;
 }
 
-.type__flying {
+.fighting__color {
+  color: variables.$type-fighting;
+}
+
+// flying
+.flying__bg {
   background-color: variables.$type-flying !important;
 }
 
-.type__ground {
+.flying__color {
+  color: variables.$type-flying;
+}
+
+// ground
+.ground__bg {
   background-color: variables.$type-ground !important;
 }
 
-.type__poison {
+.ground__color {
+  color: variables.$type-ground;
+}
+
+// poison
+.poison__bg {
   background-color: variables.$type-poison !important;
 }
 
-.type__rock {
+.poison__color {
+  color: variables.$type-poison;
+}
+
+// rock
+.rock__bg {
   background-color: variables.$type-rock !important;
 }
 
-.type__bug {
+.rock__color {
+  color: variables.$type-rock;
+}
+
+// bug
+.bug__bg {
   background-color: variables.$type-bug !important;
 }
 
-.type__ghost {
+.bug__color {
+  color: variables.$type-bug;
+}
+
+// ghost
+.ghost__bg {
   background-color: variables.$type-ghost !important;
 }
 
-.type__steel {
+.ghost__color {
+  color: variables.$type-ghost;
+}
+
+// steel
+.steel__bg {
   background-color: variables.$type-steel !important;
 }
 
-.type__fire {
+.steel__bg {
+  background-color: variables.$type-steel !important;
+}
+
+// fire
+.fire__bg {
   background-color: variables.$type-fire !important;
 }
 
-.type__water {
+.fire__color {
+  color: variables.$type-fire;
+}
+
+// water
+.water__bg {
   background-color: variables.$type-water !important;
 }
 
-.type__grass {
+.water__color {
+  color: variables.$type-water;
+}
+
+// grass
+.grass__bg {
   background-color: variables.$type-grass !important;
 }
 
-.type__electric {
+.grass__color {
+  color: variables.$type-grass;
+}
+
+// electric
+.electric__bg {
   background-color: variables.$type-electric !important;
 }
 
-.type__psychic {
+.electric__color {
+  color: variables.$type-electric;
+}
+
+// psychic
+.psychic__bg {
   background-color: variables.$type-psychic !important;
 }
 
-.type__ice {
+.psychic__color {
+  color: variables.$type-psychic;
+}
+
+// ice
+.ice__bg {
   background-color: variables.$type-ice !important;
 }
 
-.type__dragon {
+.ice__color {
+  color: variables.$type-ice;
+}
+
+// dragon
+.dragon__bg {
   background-color: variables.$type-dragon !important;
 }
 
-.type__dark {
+.dragon__color {
+  color: variables.$type-dragon;
+}
+
+// dark
+.dark__bg {
   background-color: variables.$type-dark !important;
 }
 
-.type__fairy {
+.dark__color {
+  color: variables.$type-dark;
+}
+
+// fairy
+.fairy__bg {
   background-color: variables.$type-fairy !important;
+}
+
+.fairy__color {
+  color: variables.$type-fairy;
 }
