@@ -1,0 +1,204 @@
+@use '../../styles/variables';
+
+.stat__container {
+  display: flex;
+  column-gap: 0.5rem;
+}
+
+.stat__name {
+  text-align: right;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding-right: 0.5rem;
+  border-right: 1px solid variables.$gs-light;
+  width: 2.7rem;
+}
+
+.stat__value {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  column-gap: 0.5rem;
+  font-size: 0.8rem;
+
+  progress {
+    appearance: none;
+    border: none;
+    width: 100%;
+    height: 0.3rem;
+  }
+
+  progress::-webkit-progress-bar {
+    background-color: rgba(variables.$gs-medium, 0.2);
+    border-radius: 0.15rem;
+  }
+
+  progress::-webkit-progress-value {
+    background-color: variables.$gs-medium;
+    border-radius: 0.15rem 0 0 0.15rem;
+  }
+
+  // TODO: refactor this
+  &:global(.normal) {
+    progress::-webkit-progress-bar {
+      background-color: rgba(variables.$type-normal, 0.2);
+    }
+    progress::-webkit-progress-value {
+      background-color: variables.$type-normal;
+    }
+  }
+
+  &:global(.fighting) {
+    progress::-webkit-progress-bar {
+      background-color: rgba(variables.$type-fighting, 0.2);
+    }
+    progress::-webkit-progress-value {
+      background-color: variables.$type-fighting;
+    }
+  }
+
+  &:global(.flying) {
+    progress::-webkit-progress-bar {
+      background-color: rgba(variables.$type-flying, 0.2);
+    }
+    progress::-webkit-progress-value {
+      background-color: variables.$type-flying;
+    }
+  }
+
+  &:global(.ground) {
+    progress::-webkit-progress-bar {
+      background-color: rgba(variables.$type-ground, 0.2);
+    }
+    progress::-webkit-progress-value {
+      background-color: variables.$type-ground;
+    }
+  }
+
+  &:global(.poison) {
+    progress::-webkit-progress-bar {
+      background-color: rgba(variables.$type-poison, 0.2);
+    }
+    progress::-webkit-progress-value {
+      background-color: variables.$type-poison;
+    }
+  }
+
+  &:global(.rock) {
+    progress::-webkit-progress-bar {
+      background-color: rgba(variables.$type-rock, 0.2);
+    }
+    progress::-webkit-progress-value {
+      background-color: variables.$type-rock;
+    }
+  }
+
+  &:global(.bug) {
+    progress::-webkit-progress-bar {
+      background-color: rgba(variables.$type-bug, 0.2);
+    }
+    progress::-webkit-progress-value {
+      background-color: variables.$type-bug;
+    }
+  }
+
+  &:global(.ghost) {
+    progress::-webkit-progress-bar {
+      background-color: rgba(variables.$type-ghost, 0.2);
+    }
+    progress::-webkit-progress-value {
+      background-color: variables.$type-ghost;
+    }
+  }
+
+  &:global(.steel) {
+    progress::-webkit-progress-bar {
+      background-color: rgba(variables.$type-steel, 0.2);
+    }
+    progress::-webkit-progress-value {
+      background-color: variables.$type-steel;
+    }
+  }
+
+  &:global(.fire) {
+    progress::-webkit-progress-bar {
+      background-color: rgba(variables.$type-fire, 0.2);
+    }
+    progress::-webkit-progress-value {
+      background-color: variables.$type-fire;
+    }
+  }
+
+  &:global(.water) {
+    progress::-webkit-progress-bar {
+      background-color: rgba(variables.$type-water, 0.2);
+    }
+    progress::-webkit-progress-value {
+      background-color: variables.$type-water;
+    }
+  }
+
+  &:global(.grass) {
+    progress::-webkit-progress-bar {
+      background-color: rgba(variables.$type-grass, 0.2);
+    }
+    progress::-webkit-progress-value {
+      background-color: variables.$type-grass;
+    }
+  }
+
+  &:global(.electric) {
+    progress::-webkit-progress-bar {
+      background-color: rgba(variables.$type-electric, 0.2);
+    }
+    progress::-webkit-progress-value {
+      background-color: variables.$type-electric;
+    }
+  }
+
+  &:global(.psychic) {
+    progress::-webkit-progress-bar {
+      background-color: rgba(variables.$type-psychic, 0.2);
+    }
+    progress::-webkit-progress-value {
+      background-color: variables.$type-psychic;
+    }
+  }
+
+  &:global(.ice) {
+    progress::-webkit-progress-bar {
+      background-color: rgba(variables.$type-ice, 0.2);
+    }
+    progress::-webkit-progress-value {
+      background-color: variables.$type-ice;
+    }
+  }
+
+  &:global(.dragon) {
+    progress::-webkit-progress-bar {
+      background-color: rgba(variables.$type-dragon, 0.2);
+    }
+    progress::-webkit-progress-value {
+      background-color: variables.$type-dragon;
+    }
+  }
+
+  &:global(.dark) {
+    progress::-webkit-progress-bar {
+      background-color: rgba(variables.$type-dark, 0.2);
+    }
+    progress::-webkit-progress-value {
+      background-color: variables.$type-dark;
+    }
+  }
+
+  &:global(.fairy) {
+    progress::-webkit-progress-bar {
+      background-color: rgba(variables.$type-fairy, 0.2);
+    }
+    progress::-webkit-progress-value {
+      background-color: variables.$type-fairy;
+    }
+  }
+  /////////////////////////////////////////////
+}
